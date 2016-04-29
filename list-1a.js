@@ -6,27 +6,28 @@
 
 
 var List = (function () {
-	var dataStore = [];
-
+	this.dataStore = [];
+	var that = this;
 
 	function insert(element) {
-			if(this.dataStore.length > 0){
-				for(var i=0; i < this.dataStore.length; i++){
-					if( element > this.dataStore[i]){
-						this.dataStore.push(element);
+
+			if(that.dataStore.length > 0){
+				for(var i=0; i < that.dataStore.length; i++){
+					if( element > that.dataStore[i]){
+						that.dataStore.push(element);
 						return true;
 					}
 
 				}
 				return false;
 			} else {
-				this.dataStore.push(element);
+				that.dataStore.push(element);
 				return true;
 			}
 	}
 
 	function toString() {
-		return this.dataStore;
+		return that.dataStore;
 	}
 
 	return {
